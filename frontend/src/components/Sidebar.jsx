@@ -22,7 +22,7 @@ export default function Sidebar({ current, collapsed, onNavigate, onToggle }) {
     <aside className="sidebar">
       <div className="sidebar-brand">
         <span className="logo-letter" aria-hidden="true">E</span>
-        <span className="logo-name">Elev<span>ate</span></span>
+        <span className="logo-name">Elevate</span>
       </div>
 
       <nav className="sidebar-nav" aria-label="Primary navigation">
