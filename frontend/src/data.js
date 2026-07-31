@@ -1,0 +1,510 @@
+// Mock data for the Elevate procurement and project management UI.
+
+export const kpis = [
+  {
+    id: 'projects',
+    label: 'Projects',
+    metric: 36,
+    unit: '',
+    progress: 72,
+    trend: { dir: 'up', value: '+12%' },
+    context: 'vs last month',
+    secondary: '8 active this week',
+    accent: '#3566f6',
+    spark: [22, 24, 23, 28, 27, 31, 30, 34, 36],
+  },
+  {
+    id: 'tasks',
+    label: 'Tasks',
+    metric: 5,
+    unit: '',
+    progress: 45,
+    trend: { dir: 'down', value: '-8%' },
+    context: 'vs last week',
+    secondary: '2 due today',
+    accent: '#8b5cf6',
+    spark: [8, 9, 7, 8, 6, 7, 6, 5, 5],
+  },
+  {
+    id: 'queries',
+    label: 'Queries',
+    metric: 2,
+    unit: '',
+    progress: 30,
+    trend: { dir: 'flat', value: '0%' },
+    context: 'vs last week',
+    secondary: '1 awaiting response',
+    accent: '#0ea5e9',
+    spark: [3, 3, 4, 2, 3, 2, 2, 2, 2],
+  },
+]
+
+export const projectRequests = [
+  {
+    id: 'PR-1024',
+    name: 'ERP Platform Upgrade',
+    budget: '$245,000',
+    supplier: 'Meridian Solutions',
+    buyer: 'A. Carter',
+    status: 'Approved',
+    date: 'Jul 30, 2026',
+  },
+  {
+    id: 'PR-1023',
+    name: 'Cloud Infrastructure Migration',
+    budget: '$182,500',
+    supplier: 'Nimbus Cloudworks',
+    buyer: 'S. Patel',
+    status: 'Submitted',
+    date: 'Jul 29, 2026',
+  },
+  {
+    id: 'PR-1022',
+    name: 'Workplace Security Audit',
+    budget: '$64,000',
+    supplier: 'Sentinel Advisors',
+    buyer: 'M. Okafor',
+    status: 'Pending',
+    date: 'Jul 28, 2026',
+  },
+  {
+    id: 'PR-1021',
+    name: 'Marketing Analytics Suite',
+    budget: '$97,300',
+    supplier: 'DataWave Labs',
+    buyer: 'J. Reyes',
+    status: 'Draft',
+    date: 'Jul 27, 2026',
+  },
+  {
+    id: 'PR-1020',
+    name: 'Office Relocation Services',
+    budget: '$128,000',
+    supplier: 'ProMove Group',
+    buyer: 'L. Chen',
+    status: 'Rejected',
+    date: 'Jul 25, 2026',
+  },
+  {
+    id: 'PR-1019',
+    name: 'CRM Consolidation Project',
+    budget: '$210,000',
+    supplier: 'Fusion CRM',
+    buyer: 'A. Carter',
+    status: 'Approved',
+    date: 'Jul 24, 2026',
+  },
+  {
+    id: 'PR-1018',
+    name: 'Data Center Cooling Retrofit',
+    budget: '$156,750',
+    supplier: 'TerraTherm Systems',
+    buyer: 'S. Patel',
+    status: 'Completed',
+    date: 'Jul 22, 2026',
+  },
+]
+
+export const projects = [
+  {
+    name: 'ERP Platform Upgrade',
+    owner: 'A. Carter',
+    supplier: 'Meridian Solutions',
+    budget: '$245,000',
+    status: 'Approved',
+    progress: 75,
+    updated: 'Jul 30, 2026',
+  },
+  {
+    name: 'Cloud Infrastructure Migration',
+    owner: 'S. Patel',
+    supplier: 'Nimbus Cloudworks',
+    budget: '$182,500',
+    status: 'Submitted',
+    progress: 35,
+    updated: 'Jul 29, 2026',
+  },
+  {
+    name: 'Workplace Security Audit',
+    owner: 'M. Okafor',
+    supplier: 'Sentinel Advisors',
+    budget: '$64,000',
+    status: 'Pending',
+    progress: 20,
+    updated: 'Jul 28, 2026',
+  },
+  {
+    name: 'Marketing Analytics Suite',
+    owner: 'J. Reyes',
+    supplier: 'DataWave Labs',
+    budget: '$97,300',
+    status: 'Draft',
+    progress: 10,
+    updated: 'Jul 27, 2026',
+  },
+  {
+    name: 'Office Relocation Services',
+    owner: 'L. Chen',
+    supplier: 'ProMove Group',
+    budget: '$128,000',
+    status: 'Rejected',
+    progress: 45,
+    updated: 'Jul 25, 2026',
+  },
+  {
+    name: 'CRM Consolidation Project',
+    owner: 'A. Carter',
+    supplier: 'Fusion CRM',
+    budget: '$210,000',
+    status: 'Approved',
+    progress: 60,
+    updated: 'Jul 24, 2026',
+  },
+  {
+    name: 'Data Center Cooling Retrofit',
+    owner: 'S. Patel',
+    supplier: 'TerraTherm Systems',
+    budget: '$156,750',
+    status: 'Completed',
+    progress: 100,
+    updated: 'Jul 22, 2026',
+  },
+  {
+    name: 'Onboarding Portal Redesign',
+    owner: 'M. Okafor',
+    supplier: 'Brightpath Digital',
+    budget: '$88,400',
+    status: 'Pending',
+    progress: 30,
+    updated: 'Jul 21, 2026',
+  },
+]
+
+// Rich detail data used by the project detail view.
+export const projectDetails = {
+  'ERP Platform Upgrade': {
+    id: 'PRJ-1042',
+    description:
+      'Migrate the legacy ERP to a modern modular architecture, including vendor consolidation, data migration, and workforce training. The upgrade targets a 40% reduction in procurement cycle time and unified reporting across regions.',
+    start: 'Jun 12, 2026',
+    end: 'Nov 30, 2026',
+    category: 'Technology',
+    location: 'Global',
+    risk: 'Medium',
+    milestones: [
+      { title: 'Requirements & vendor selection', date: 'Jul 3, 2026', done: true },
+      { title: 'Contract signed', date: 'Jul 18, 2026', done: true },
+      { title: 'Data migration — phase 1', date: 'Aug 15, 2026', done: false },
+      { title: 'User acceptance testing', date: 'Oct 1, 2026', done: false },
+      { title: 'Go-live', date: 'Nov 30, 2026', done: false },
+    ],
+    team: [
+      { name: 'A. Carter', role: 'Project Owner', initials: 'AC' },
+      { name: 'D. Whitfield', role: 'Technical Lead', initials: 'DW' },
+      { name: 'R. Alvarez', role: 'Finance Analyst', initials: 'RA' },
+    ],
+    activity: [
+      { text: 'Budget revision #2 approved', time: '2 hr ago', color: 'var(--success)' },
+      { text: 'Milestone "Contract signed" marked complete', time: 'Yesterday', color: 'var(--brand-500)' },
+      { text: 'Supplier scorecard updated by D. Whitfield', time: '3 days ago', color: 'var(--warning)' },
+      { text: 'Project approved by Finance', time: 'Jun 19, 2026', color: 'var(--success)' },
+    ],
+    documents: [
+      { name: 'ERP_RFP_Final.pdf', size: '1.2 MB', date: 'Jul 10, 2026' },
+      { name: 'Vendor_Scorecard.xlsx', size: '84 KB', date: 'Jul 22, 2026' },
+      { name: 'SOW_Approved.docx', size: '312 KB', date: 'Jul 18, 2026' },
+    ],
+  },
+  'Cloud Infrastructure Migration': {
+    id: 'PRJ-1038',
+    description:
+      'Move on-premise workloads to a cloud-first infrastructure with automated scaling, disaster recovery, and cost governance guardrails. Includes network redesign and security baseline hardening.',
+    start: 'Jun 1, 2026',
+    end: 'Oct 20, 2026',
+    category: 'Infrastructure',
+    location: 'US-East',
+    risk: 'High',
+    milestones: [
+      { title: 'Workload inventory', date: 'Jun 20, 2026', done: true },
+      { title: 'Landing zone architecture', date: 'Jul 12, 2026', done: false },
+      { title: 'Wave 1 migration', date: 'Aug 5, 2026', done: false },
+      { title: 'Cutover complete', date: 'Oct 20, 2026', done: false },
+    ],
+    team: [
+      { name: 'S. Patel', role: 'Project Owner', initials: 'SP' },
+      { name: 'E. Novak', role: 'Cloud Architect', initials: 'EN' },
+      { name: 'T. Brooks', role: 'Security Lead', initials: 'TB' },
+    ],
+    activity: [
+      { text: 'Landing zone blueprint shared with vendors', time: '5 hr ago', color: 'var(--info)' },
+      { text: 'Security baseline draft uploaded', time: 'Yesterday', color: 'var(--warning)' },
+    ],
+    documents: [
+      { name: 'Workload_Inventory.csv', size: '210 KB', date: 'Jun 20, 2026' },
+      { name: 'Landing_Zone_Diagram.pdf', size: '1.8 MB', date: 'Jul 14, 2026' },
+    ],
+  },
+  'Workplace Security Audit': {
+    id: 'PRJ-1031',
+    description:
+      'Third-party audit of physical and digital security controls across headquarters and two regional offices. Deliverable is a prioritized remediation roadmap with risk ratings.',
+    start: 'Jul 1, 2026',
+    end: 'Sep 15, 2026',
+    category: 'Security',
+    location: 'HQ + Regional',
+    risk: 'Medium',
+    milestones: [
+      { title: 'Scope agreement', date: 'Jul 8, 2026', done: true },
+      { title: 'On-site assessment', date: 'Aug 1, 2026', done: false },
+      { title: 'Remediation roadmap', date: 'Sep 15, 2026', done: false },
+    ],
+    team: [
+      { name: 'M. Okafor', role: 'Project Owner', initials: 'MO' },
+      { name: 'L. Fontaine', role: 'Audit Liaison', initials: 'LF' },
+    ],
+    activity: [
+      { text: 'Auditor access requests approved', time: '1 day ago', color: 'var(--success)' },
+      { text: 'Scope agreement signed', time: 'Jul 8, 2026', color: 'var(--brand-500)' },
+    ],
+    documents: [
+      { name: 'Audit_Scope.pdf', size: '240 KB', date: 'Jul 8, 2026' },
+    ],
+  },
+  'Marketing Analytics Suite': {
+    id: 'PRJ-1027',
+    description:
+      'Stand up a unified marketing analytics platform consolidating campaign, funnel, and revenue data into a single source of truth with executive dashboards.',
+    start: 'Jul 15, 2026',
+    end: 'Dec 10, 2026',
+    category: 'Analytics',
+    location: 'Virtual',
+    risk: 'Low',
+    milestones: [
+      { title: 'Data source mapping', date: 'Aug 5, 2026', done: false },
+      { title: 'Dashboard prototype', date: 'Sep 20, 2026', done: false },
+      { title: 'Executive rollout', date: 'Dec 10, 2026', done: false },
+    ],
+    team: [
+      { name: 'J. Reyes', role: 'Project Owner', initials: 'JR' },
+      { name: 'K. Mori', role: 'Data Engineer', initials: 'KM' },
+    ],
+    activity: [
+      { text: 'Requirement workshop completed', time: '2 days ago', color: 'var(--brand-500)' },
+    ],
+    documents: [
+      { name: 'Requirements_Notes.md', size: '48 KB', date: 'Jul 27, 2026' },
+    ],
+  },
+  'Office Relocation Services': {
+    id: 'PRJ-1021',
+    description:
+      'End-to-end relocation of the finance and operations teams to the new downtown campus, including move logistics, furniture, IT provisioning, and vendor management.',
+    start: 'May 20, 2026',
+    end: 'Aug 30, 2026',
+    category: 'Facilities',
+    location: 'Downtown Campus',
+    risk: 'Medium',
+    milestones: [
+      { title: 'Vendor bids received', date: 'Jun 30, 2026', done: true },
+      { title: 'Move plan approved', date: 'Jul 20, 2026', done: true },
+      { title: 'Relocation weekend', date: 'Aug 15, 2026', done: false },
+      { title: 'Post-move support', date: 'Aug 30, 2026', done: false },
+    ],
+    team: [
+      { name: 'L. Chen', role: 'Project Owner', initials: 'LC' },
+      { name: 'G. Novak', role: 'Facilities Coordinator', initials: 'GN' },
+    ],
+    activity: [
+      { text: 'Move plan approved by leadership', time: 'Jul 20, 2026', color: 'var(--success)' },
+      { text: 'Rejected bid — over budget', time: 'Jul 19, 2026', color: 'var(--error)' },
+    ],
+    documents: [
+      { name: 'Bid_Comparison.xlsx', size: '96 KB', date: 'Jul 1, 2026' },
+    ],
+  },
+  'CRM Consolidation Project': {
+    id: 'PRJ-1015',
+    description:
+      'Consolidate three legacy CRM systems into a single platform to eliminate duplicate records, unify sales reporting, and reduce licensing spend by an estimated 25%.',
+    start: 'Jun 25, 2026',
+    end: 'Dec 20, 2026',
+    category: 'Technology',
+    location: 'Global',
+    risk: 'Medium',
+    milestones: [
+      { title: 'Data audit complete', date: 'Jul 20, 2026', done: true },
+      { title: 'Schema migration', date: 'Sep 1, 2026', done: false },
+      { title: 'Legacy sunset', date: 'Dec 20, 2026', done: false },
+    ],
+    team: [
+      { name: 'A. Carter', role: 'Project Owner', initials: 'AC' },
+      { name: 'S. Ito', role: 'CRM Consultant', initials: 'SI' },
+    ],
+    activity: [
+      { text: 'Duplicate record cleanup finished', time: '1 day ago', color: 'var(--success)' },
+    ],
+    documents: [
+      { name: 'Data_Audit_Report.pdf', size: '1.1 MB', date: 'Jul 21, 2026' },
+    ],
+  },
+  'Data Center Cooling Retrofit': {
+    id: 'PRJ-1009',
+    description:
+      'Upgrade cooling infrastructure in the primary data center to improve energy efficiency and increase density capacity, with zero-downtime installation windows.',
+    start: 'May 5, 2026',
+    end: 'Jul 15, 2026',
+    category: 'Infrastructure',
+    location: 'DC-1',
+    risk: 'Low',
+    milestones: [
+      { title: 'Site assessment', date: 'May 25, 2026', done: true },
+      { title: 'Unit installation — phase 1', date: 'Jun 30, 2026', done: true },
+      { title: 'Final commissioning', date: 'Jul 15, 2026', done: true },
+    ],
+    team: [
+      { name: 'S. Patel', role: 'Project Owner', initials: 'SP' },
+      { name: 'H. Stone', role: 'Facilities Engineer', initials: 'HS' },
+    ],
+    activity: [
+      { text: 'Project marked complete', time: 'Jul 22, 2026', color: 'var(--success)' },
+    ],
+    documents: [
+      { name: 'Commissioning_Report.pdf', size: '640 KB', date: 'Jul 16, 2026' },
+    ],
+  },
+  'Onboarding Portal Redesign': {
+    id: 'PRJ-1004',
+    description:
+      'Redesign the employee onboarding portal with modern UX, self-service task lists, and integrations with HR systems to cut time-to-productivity by two weeks.',
+    start: 'Jul 10, 2026',
+    end: 'Nov 1, 2026',
+    category: 'Digital',
+    location: 'Global',
+    risk: 'Low',
+    milestones: [
+      { title: 'UX research complete', date: 'Jul 28, 2026', done: false },
+      { title: 'Design system handoff', date: 'Sep 5, 2026', done: false },
+      { title: 'Beta launch', date: 'Nov 1, 2026', done: false },
+    ],
+    team: [
+      { name: 'M. Okafor', role: 'Project Owner', initials: 'MO' },
+      { name: 'P. Sanders', role: 'Product Designer', initials: 'PS' },
+    ],
+    activity: [
+      { text: 'Stakeholder interviews scheduled', time: 'Today', color: 'var(--info)' },
+    ],
+    documents: [
+      { name: 'UX_Research_Plan.pdf', size: '180 KB', date: 'Jul 26, 2026' },
+    ],
+  },
+}
+
+export const tasks = [
+  {
+    title: 'Review vendor contract terms',
+    assignee: 'A. Carter',
+    project: 'ERP Platform Upgrade',
+    due: 'Aug 2, 2026',
+    status: 'Pending',
+    priority: 'High',
+  },
+  {
+    title: 'Approve budget revision #3',
+    assignee: 'S. Patel',
+    project: 'Cloud Infrastructure Migration',
+    due: 'Aug 1, 2026',
+    status: 'Submitted',
+    priority: 'High',
+  },
+  {
+    title: 'Collect security audit findings',
+    assignee: 'M. Okafor',
+    project: 'Workplace Security Audit',
+    due: 'Aug 4, 2026',
+    status: 'Pending',
+    priority: 'Medium',
+  },
+  {
+    title: 'Schedule stakeholder demo',
+    assignee: 'J. Reyes',
+    project: 'Marketing Analytics Suite',
+    due: 'Aug 5, 2026',
+    status: 'Draft',
+    priority: 'Low',
+  },
+  {
+    title: 'Finalize relocation quote',
+    assignee: 'L. Chen',
+    project: 'Office Relocation Services',
+    due: 'Jul 31, 2026',
+    status: 'Rejected',
+    priority: 'Medium',
+  },
+  {
+    title: 'Sign SOW for CRM phase 2',
+    assignee: 'A. Carter',
+    project: 'CRM Consolidation Project',
+    due: 'Aug 3, 2026',
+    status: 'Approved',
+    priority: 'High',
+  },
+  {
+    title: 'Close out cooling retrofit',
+    assignee: 'S. Patel',
+    project: 'Data Center Cooling Retrofit',
+    due: 'Jul 28, 2026',
+    status: 'Completed',
+    priority: 'Low',
+  },
+]
+
+export const analytics = {
+  spend: [
+    { label: 'Jan', value: 42 },
+    { label: 'Feb', value: 58 },
+    { label: 'Mar', value: 49 },
+    { label: 'Apr', value: 66 },
+    { label: 'May', value: 74 },
+    { label: 'Jun', value: 61 },
+    { label: 'Jul', value: 83 },
+  ],
+  statusDistribution: [
+    { label: 'Approved', value: 12, color: 'var(--success)' },
+    { label: 'Pending', value: 8, color: 'var(--warning)' },
+    { label: 'Draft', value: 6, color: 'var(--neutral)' },
+    { label: 'Submitted', value: 7, color: 'var(--info)' },
+    { label: 'Rejected', value: 3, color: 'var(--error)' },
+  ],
+  activity: [
+    {
+      id: 1,
+      text: 'A. Carter approved project ERP Platform Upgrade',
+      time: '12 min ago',
+      color: 'var(--success)',
+    },
+    {
+      id: 2,
+      text: 'S. Patel submitted Cloud Infrastructure Migration for review',
+      time: '48 min ago',
+      color: 'var(--info)',
+    },
+    {
+      id: 3,
+      text: 'New supplier added: TerraTherm Systems',
+      time: '2 hr ago',
+      color: 'var(--brand-500)',
+    },
+    {
+      id: 4,
+      text: 'Task "Finalize relocation quote" was rejected',
+      time: '3 hr ago',
+      color: 'var(--error)',
+    },
+    {
+      id: 5,
+      text: 'Budget revision #3 opened for approval',
+      time: '5 hr ago',
+      color: 'var(--warning)',
+    },
+  ],
+}

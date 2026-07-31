@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output (Netlify builds fresh from source)
+dist/
+
+# OS / editor noise
+.DS_Store
+*.log
+
+# Local env / secrets (none committed)
+.env
+.env.*
+!.env.example
+
+# Agent tooling + local planning docs (not part of the shipped app)
+.opencode/
+Enterprise_UI_UX_Modernization_Agent_Prompt.md
+Existing_UI_Reference.md

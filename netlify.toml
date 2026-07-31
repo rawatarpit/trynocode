@@ -1,0 +1,11 @@
+# Netlify build configuration for the trynocode frontend.
+# The Vite app lives in /frontend — Netlify needs to build there.
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Static single-page app (no client-side routing) — no redirect rules required.
