@@ -10,7 +10,7 @@ export const kpis = [
     trend: { dir: 'up', value: '+12%' },
     context: 'vs last month',
     secondary: '8 active this week',
-    accent: '#3566f6',
+    accent: '#5f67a3',
     spark: [22, 24, 23, 28, 27, 31, 30, 34, 36],
   },
   {

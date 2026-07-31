@@ -21,10 +21,8 @@ export default function Sidebar({ current, collapsed, onNavigate, onToggle }) {
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
-        <div className="logo-mark" aria-hidden="true">E</div>
-        <div className="logo-name">
-          Elev<span>ate</span>
-        </div>
+        <span className="logo-letter" aria-hidden="true">E</span>
+        <span className="logo-name">Elev<span>ate</span></span>
       </div>
 
       <nav className="sidebar-nav" aria-label="Primary navigation">

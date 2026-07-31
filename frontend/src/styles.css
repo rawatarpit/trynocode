@@ -1,34 +1,35 @@
 /* ============================================================
    Elevate — Design System v2
    Inter typography · 8pt spacing · layered elevation · WCAG AA
-   Brand language preserved: dark navy sidebar, indigo brand,
-   semantic status colors, table-first workflows.
+   Brand language preserved: deep blue-purple sidebar, periwinkle
+   brand (#A4ABDB accent / #5F67A3 primary), semantic status colors,
+   table-first workflows.
    ============================================================ */
 
 :root {
   color-scheme: light;
 
-  /* Brand (indigo-blue family) */
-  --brand-50: #eef3ff;
-  --brand-100: #dce7ff;
-  --brand-200: #bcd1ff;
-  --brand-300: #8fb1ff;
-  --brand-400: #5d8bfd;
-  --brand-500: #3566f6;
-  --brand-600: #254bd8;
-  --brand-700: #1d3aa6;
-  --brand-800: #1c3384;
-  --brand-900: #1b2d69;
-  --brand-950: #101d3c;
+  /* Brand (blue-purple periwinkle family) */
+  --brand-50: #eef0f8;
+  --brand-100: #dee1f1;
+  --brand-200: #c3c8e6;
+  --brand-300: #a4abdb;
+  --brand-400: #8b93cd;
+  --brand-500: #747cba;
+  --brand-600: #5f67a3;
+  --brand-700: #4e5589;
+  --brand-800: #41476e;
+  --brand-900: #343a56;
+  --brand-950: #252a40;
 
-  /* Sidebar (dark navy) */
-  --sidebar-bg-1: #12224a;
-  --sidebar-bg-2: #0d1b3e;
-  --sidebar-bg-3: #0a1530;
-  --sidebar-text: #a9b6d6;
+  /* Sidebar (deep blue-purple) */
+  --sidebar-bg-1: #1c2452;
+  --sidebar-bg-2: #151c42;
+  --sidebar-bg-3: #0f1532;
+  --sidebar-text: #aab4de;
   --sidebar-text-active: #ffffff;
-  --sidebar-icon: #8795bd;
-  --sidebar-border: rgba(148, 170, 220, 0.14);
+  --sidebar-icon: #8f97c9;
+  --sidebar-border: rgba(164, 171, 219, 0.16);
 
   /* Neutrals */
   --bg: #f5f6fa;
@@ -100,7 +101,7 @@
   --shadow: 0 1px 2px rgba(15, 20, 32, 0.04), 0 4px 12px -2px rgba(15, 20, 32, 0.06);
   --shadow-md: 0 2px 4px rgba(15, 20, 32, 0.04), 0 10px 24px -6px rgba(15, 20, 32, 0.12);
   --shadow-lg: 0 4px 8px rgba(15, 20, 32, 0.05), 0 20px 44px -10px rgba(15, 20, 32, 0.18);
-  --shadow-brand: 0 1px 2px rgba(28, 56, 140, 0.28), 0 4px 12px -2px rgba(37, 75, 216, 0.28);
+  --shadow-brand: 0 1px 2px rgba(95, 103, 163, 0.3), 0 4px 12px -2px rgba(95, 103, 163, 0.32);
 
   /* Focus */
   --focus-ring: 0 0 0 3px var(--brand-100);
@@ -122,26 +123,26 @@
   color-scheme: dark;
 
   /* Brand — brightened for dark surfaces */
-  --brand-50: #1a2a56;
-  --brand-100: #22356b;
-  --brand-200: #2f4a94;
-  --brand-300: #5d8bfd;
-  --brand-400: #7aa3ff;
-  --brand-500: #5d8bfd;
-  --brand-600: #4a74f0;
-  --brand-700: #3566f6;
-  --brand-800: #a9c2ff;
-  --brand-900: #d6e2ff;
-  --brand-950: #eef3ff;
+  --brand-50: #1d2550;
+  --brand-100: #252f63;
+  --brand-200: #303a78;
+  --brand-300: #3d488e;
+  --brand-400: #4c569f;
+  --brand-500: #5f68ad;
+  --brand-600: #6771b5;
+  --brand-700: #5f67a3;
+  --brand-800: #a4abdb;
+  --brand-900: #cdd1ea;
+  --brand-950: #e6e8f5;
 
-  /* Sidebar — stays deep navy, slightly deeper in dark */
-  --sidebar-bg-1: #0e1c40;
-  --sidebar-bg-2: #0a142e;
-  --sidebar-bg-3: #070e20;
-  --sidebar-text: #9aa8cc;
+  /* Sidebar — stays deep blue-purple, slightly deeper in dark */
+  --sidebar-bg-1: #141c40;
+  --sidebar-bg-2: #0f152e;
+  --sidebar-bg-3: #0b101f;
+  --sidebar-text: #aab4de;
   --sidebar-text-active: #ffffff;
-  --sidebar-icon: #7e8cb8;
-  --sidebar-border: rgba(148, 170, 220, 0.12);
+  --sidebar-icon: #8f97c9;
+  --sidebar-border: rgba(164, 171, 219, 0.14);
 
   /* Neutrals — cool navy zinc */
   --bg: #0b1120;
@@ -672,28 +673,12 @@ a {
   border-bottom: 1px solid var(--sidebar-border);
 }
 
-.logo-mark {
-  position: relative;
-  flex-shrink: 0;
-  width: 34px;
-  height: 34px;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--brand-400), var(--brand-600));
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.logo-letter {
+  display: none;
   color: #fff;
   font-weight: 800;
   font-size: var(--text-md);
-  box-shadow: 0 4px 14px rgba(53, 102, 246, 0.45);
-}
-
-.logo-mark::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  letter-spacing: -0.01em;
 }
 
 .logo-name {
@@ -705,7 +690,7 @@ a {
 }
 
 .logo-name span {
-  color: var(--sidebar-icon);
+  color: var(--brand-300);
   font-weight: 500;
   margin-left: 4px;
 }
@@ -762,9 +747,9 @@ a {
 }
 
 .nav-item.active {
-  background: linear-gradient(90deg, rgba(53, 102, 246, 0.32), rgba(53, 102, 246, 0.12));
+  background: linear-gradient(90deg, rgba(164, 171, 219, 0.32), rgba(164, 171, 219, 0.12));
   color: var(--sidebar-text-active);
-  box-shadow: inset 0 0 0 1px rgba(140, 170, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(164, 171, 219, 0.16);
 }
 
 .nav-item.active::before {
@@ -810,7 +795,7 @@ a {
   color: #fff;
   border-radius: var(--radius-pill);
   padding: 1px 8px;
-  box-shadow: 0 1px 3px rgba(53, 102, 246, 0.35);
+  box-shadow: 0 1px 3px rgba(95, 103, 163, 0.4);
 }
 
 .sidebar-foot {
@@ -917,6 +902,10 @@ a {
 .sidebar-collapsed .user-info,
 .sidebar-collapsed .user-logout {
   display: none;
+}
+
+.sidebar-collapsed .logo-letter {
+  display: inline;
 }
 
 .sidebar-collapsed .sidebar-nav,
@@ -1130,7 +1119,7 @@ a {
 
 .btn-primary:hover:not(:disabled) {
   background: var(--brand-500);
-  box-shadow: 0 1px 2px rgba(28, 56, 140, 0.3), 0 6px 16px -2px rgba(37, 75, 216, 0.35);
+  box-shadow: 0 1px 2px rgba(78, 85, 137, 0.3), 0 6px 16px -2px rgba(95, 103, 163, 0.4);
 }
 
 .btn-primary:active:not(:disabled) {
@@ -1404,7 +1393,7 @@ a {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(37, 75, 216, 0.35);
+  box-shadow: 0 2px 6px rgba(95, 103, 163, 0.35);
 }
 
 .dropdown-menu-header {
@@ -3079,7 +3068,7 @@ table.data-table {
 }
 
 /* Team avatars with tones */
-.avatar-tone-0 { background: linear-gradient(135deg, #3566f6, #254bd8); }
+.avatar-tone-0 { background: linear-gradient(135deg, #747cba, #5f67a3); }
 .avatar-tone-1 { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
 .avatar-tone-2 { background: linear-gradient(135deg, #0ea5e9, #0369a1); }
 .avatar-tone-3 { background: linear-gradient(135deg, #10b981, #047857); }
