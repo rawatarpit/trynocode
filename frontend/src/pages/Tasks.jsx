@@ -5,6 +5,7 @@ import PageHeader from '../components/PageHeader.jsx'
 import Dropdown from '../components/Dropdown.jsx'
 import MultiSelect from '../components/MultiSelect.jsx'
 import FilterTabs from '../components/FilterTabs.jsx'
+import FilterField from '../components/FilterField.jsx'
 import FilterChips from '../components/FilterChips.jsx'
 import { useToast } from '../components/Toast.jsx'
 import { IconFlag, IconUser, IconPlus, IconProjects } from '../components/icons.jsx'
@@ -100,37 +101,45 @@ export default function Tasks() {
         searchValue={query}
         onSearch={setQuery}
         filters={
+          <FilterTabs
+            tabs={statusTabs}
+            value={statusTab}
+            onChange={setStatusTab}
+            label="Filter by status"
+          />
+        }
+        filterFields={
           <>
-            <FilterTabs
-              tabs={statusTabs}
-              value={statusTab}
-              onChange={setStatusTab}
-              label="Filter by status"
-            />
-            <MultiSelect
-              label="Priority"
-              placeholder="All priorities"
-              options={PRIORITY_OPTIONS}
-              value={priorityFilter}
-              onChange={setPriorityFilter}
-              icon={IconFlag}
-            />
-            <Dropdown
-              options={ASSIGNEE_OPTIONS}
-              value={assigneeFilter}
-              onChange={setAssigneeFilter}
-              placeholder="All assignees"
-              icon={IconUser}
-              searchable
-            />
-            <Dropdown
-              options={PROJECT_OPTIONS}
-              value={projectFilter}
-              onChange={setProjectFilter}
-              placeholder="All projects"
-              icon={IconProjects}
-              searchable
-            />
+            <FilterField label="Priority">
+              <MultiSelect
+                label="Priority"
+                placeholder="All priorities"
+                options={PRIORITY_OPTIONS}
+                value={priorityFilter}
+                onChange={setPriorityFilter}
+                icon={IconFlag}
+              />
+            </FilterField>
+            <FilterField label="Assignee">
+              <Dropdown
+                options={ASSIGNEE_OPTIONS}
+                value={assigneeFilter}
+                onChange={setAssigneeFilter}
+                placeholder="All assignees"
+                icon={IconUser}
+                searchable
+              />
+            </FilterField>
+            <FilterField label="Project">
+              <Dropdown
+                options={PROJECT_OPTIONS}
+                value={projectFilter}
+                onChange={setProjectFilter}
+                placeholder="All projects"
+                icon={IconProjects}
+                searchable
+              />
+            </FilterField>
           </>
         }
         chips={

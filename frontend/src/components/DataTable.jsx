@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   IconMore,
-  IconSearch,
   IconEye,
   IconPencil,
   IconCopy,
   IconArchive,
 } from './icons.jsx'
+import EmptyState from './EmptyState.jsx'
 
 function getCellClass(col) {
   if (col.align === 'right') return 'cell-numeric'
@@ -179,20 +179,12 @@ export default function DataTable({
           {sorted.length === 0 ? (
             <tr>
               <td colSpan={colSpan} className="table-empty-cell">
-                <div className="table-empty">
-                  <div className="empty-illustration">
-                    <IconSearch width="26" height="26" />
-                  </div>
-                  <h3 className="empty-title">No results found</h3>
-                  <p className="empty-text">
-                    No rows match your current search or filters.
-                  </p>
-                  {onClearFilters && (
-                    <button className="btn btn-secondary btn-sm" onClick={onClearFilters}>
-                      Clear filters
-                    </button>
-                  )}
-                </div>
+                <EmptyState
+                  title="No results found"
+                  message="No rows match your current search or filters."
+                  actionLabel={onClearFilters ? 'Clear filters' : undefined}
+                  onAction={onClearFilters}
+                />
               </td>
             </tr>
           ) : (

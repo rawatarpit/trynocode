@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PageHeader from '../components/PageHeader.jsx'
 import Dropdown from '../components/Dropdown.jsx'
+import EmptyState from '../components/EmptyState.jsx'
 import { useToast } from '../components/Toast.jsx'
 import { IconBell, IconCheck, IconRefresh } from '../components/icons.jsx'
 
@@ -35,16 +36,12 @@ function ComingSoon({ section }) {
         </div>
       </div>
       <div className="card-body">
-        <div className="empty-state">
-          <div className="empty-illustration">
-            <IconBell width="26" height="26" />
-          </div>
-          <h3 className="empty-title">{section} is not available in this preview</h3>
-          <p className="empty-text">
-            This section is part of the full workspace configuration. The Organization settings
-            above are editable in this demo.
-          </p>
-        </div>
+        <EmptyState
+          icon={IconBell}
+          title={`${section} is not available in this preview`}
+          message="This section is part of the full workspace configuration. The Organization settings above are editable in this demo."
+          compact
+        />
       </div>
     </div>
   )
@@ -136,15 +133,12 @@ export default function Settings() {
                 </div>
               </div>
 
-              <div className="empty-state" style={{ paddingTop: 'var(--space-6)', paddingBottom: 'var(--space-4)' }}>
-                <div className="empty-illustration">
-                  <IconBell width="26" height="26" />
-                </div>
-                <h3 className="empty-title">Notifications are on</h3>
-                <p className="empty-text">
-                  Team members receive email alerts for approvals, rejections, and status changes.
-                </p>
-              </div>
+              <EmptyState
+                icon={IconBell}
+                title="Notifications are on"
+                message="Team members receive email alerts for approvals, rejections, and status changes."
+                compact
+              />
             </div>
           </div>
         ) : (

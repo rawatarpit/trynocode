@@ -4,6 +4,7 @@ import StatusBadge from '../components/StatusBadge.jsx'
 import PageHeader from '../components/PageHeader.jsx'
 import Dropdown from '../components/Dropdown.jsx'
 import FilterTabs from '../components/FilterTabs.jsx'
+import FilterField from '../components/FilterField.jsx'
 import FilterChips from '../components/FilterChips.jsx'
 import { useToast } from '../components/Toast.jsx'
 import { IconUser, IconPlus, IconBuilding, IconTag, IconGauge } from '../components/icons.jsx'
@@ -134,44 +135,54 @@ export default function Projects({ onOpenProject }) {
         searchValue={query}
         onSearch={setQuery}
         filters={
+          <FilterTabs
+            tabs={statusTabs}
+            value={statusTab}
+            onChange={setStatusTab}
+            label="Filter by status"
+          />
+        }
+        filterFields={
           <>
-            <FilterTabs
-              tabs={statusTabs}
-              value={statusTab}
-              onChange={setStatusTab}
-              label="Filter by status"
-            />
-            <Dropdown
-              options={OWNER_OPTIONS}
-              value={ownerFilter}
-              onChange={setOwnerFilter}
-              placeholder="All owners"
-              icon={IconUser}
-              searchable
-            />
-            <Dropdown
-              options={SUPPLIER_OPTIONS}
-              value={supplierFilter}
-              onChange={setSupplierFilter}
-              placeholder="All suppliers"
-              icon={IconBuilding}
-              searchable
-            />
-            <Dropdown
-              options={CATEGORY_OPTIONS}
-              value={categoryFilter}
-              onChange={setCategoryFilter}
-              placeholder="All categories"
-              icon={IconTag}
-              searchable
-            />
-            <Dropdown
-              options={BUDGET_OPTIONS}
-              value={budgetFilter}
-              onChange={setBudgetFilter}
-              placeholder="Any budget"
-              icon={IconGauge}
-            />
+            <FilterField label="Owner">
+              <Dropdown
+                options={OWNER_OPTIONS}
+                value={ownerFilter}
+                onChange={setOwnerFilter}
+                placeholder="All owners"
+                icon={IconUser}
+                searchable
+              />
+            </FilterField>
+            <FilterField label="Supplier">
+              <Dropdown
+                options={SUPPLIER_OPTIONS}
+                value={supplierFilter}
+                onChange={setSupplierFilter}
+                placeholder="All suppliers"
+                icon={IconBuilding}
+                searchable
+              />
+            </FilterField>
+            <FilterField label="Category">
+              <Dropdown
+                options={CATEGORY_OPTIONS}
+                value={categoryFilter}
+                onChange={setCategoryFilter}
+                placeholder="All categories"
+                icon={IconTag}
+                searchable
+              />
+            </FilterField>
+            <FilterField label="Budget">
+              <Dropdown
+                options={BUDGET_OPTIONS}
+                value={budgetFilter}
+                onChange={setBudgetFilter}
+                placeholder="Any budget"
+                icon={IconGauge}
+              />
+            </FilterField>
           </>
         }
         chips={

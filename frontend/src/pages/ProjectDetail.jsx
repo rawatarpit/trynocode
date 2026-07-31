@@ -18,6 +18,7 @@ import {
   IconMore,
 } from '../components/icons.jsx'
 import StatusBadge from '../components/StatusBadge.jsx'
+import EmptyState from '../components/EmptyState.jsx'
 import { useToast } from '../components/Toast.jsx'
 
 const TABS = [
@@ -314,11 +315,13 @@ export default function ProjectDetail({ project, onBack }) {
     return (
       <div className="card">
         <div className="card-body">
-          <div className="empty-state">
-            <div className="empty-illustration"><IconFileText width="26" height="26" /></div>
-            <h3 className="empty-title">Project not found</h3>
-            <button className="btn btn-secondary" onClick={onBack}>Back to projects</button>
-          </div>
+          <EmptyState
+            icon={IconFileText}
+            title="Project not found"
+            actionLabel="Back to projects"
+            onAction={onBack}
+            compact
+          />
         </div>
       </div>
     )

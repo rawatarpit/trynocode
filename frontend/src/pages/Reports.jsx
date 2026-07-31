@@ -3,6 +3,7 @@ import PageHeader from '../components/PageHeader.jsx'
 import DataTable from '../components/DataTable.jsx'
 import FilterTabs from '../components/FilterTabs.jsx'
 import FilterChips from '../components/FilterChips.jsx'
+import EmptyState from '../components/EmptyState.jsx'
 import { useToast } from '../components/Toast.jsx'
 import { IconFile, IconDownload, IconPlus } from '../components/icons.jsx'
 
@@ -136,22 +137,15 @@ export default function Reports() {
 
       <div className="card">
         <div className="card-body">
-          <div className="empty-state" style={{ paddingTop: 'var(--space-8)', paddingBottom: 'var(--space-8)' }}>
-            <div className="empty-illustration">
-              <IconFile width="26" height="26" />
-            </div>
-            <h3 className="empty-title">No scheduled reports yet</h3>
-            <p className="empty-text">
-              Set up a recurring report to receive procurement summaries automatically by email.
-            </p>
-            <button
-              className="btn btn-secondary"
-              onClick={() => toast.info('Recurring report scheduled for the first of each month')}
-            >
-              <IconPlus width="15" height="15" aria-hidden="true" />
-              Schedule a report
-            </button>
-          </div>
+          <EmptyState
+            icon={IconFile}
+            title="No scheduled reports yet"
+            message="Set up a recurring report to receive procurement summaries automatically by email."
+            actionLabel="Schedule a report"
+            actionIcon={IconPlus}
+            onAction={() => toast.info('Recurring report scheduled for the first of each month')}
+            compact
+          />
         </div>
       </div>
     </>

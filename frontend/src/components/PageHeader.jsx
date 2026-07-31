@@ -3,6 +3,7 @@ import FilterChips from './FilterChips.jsx'
 
 // Page title + primary CTA, then the toolbar.
 // Toolbar layout: [ search ] ... [ divider | filters ] [ divider | actions ]
+// Optional secondary filter panel (labeled fields) renders under the toolbar.
 export default function PageHeader({
   crumb,
   title,
@@ -11,6 +12,7 @@ export default function PageHeader({
   actionIcon: ActionIcon,
   onAction,
   filters,
+  filterFields,
   actions,
   chips,
   searchValue = '',
@@ -69,6 +71,8 @@ export default function PageHeader({
           </>
         )}
       </div>
+
+      {filterFields && <div className="filter-panel">{filterFields}</div>}
 
       {chips}
     </header>
